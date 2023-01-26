@@ -1,1 +1,11 @@
-{% extends base.html %}
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% block content %}
+    {% for todo in todos %}
+        <h3>{{ todo.title }}</h3>
+        <small>{{ todo.title }}</small>
+        <small>{{ todo.created }}</small>
+        <p>{{ todo.body }}</p>
+    <hr>
+    {% endfor%}
+{% endblock content %}
