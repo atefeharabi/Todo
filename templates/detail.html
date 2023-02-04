@@ -8,6 +8,7 @@
                 <p class="card-text placeholder-glow">{{ todo.created }}</p>
                 <p class="card-text placeholder-glow">{{ todo.body }}</p>
                 <a href="{% url 'delete' todo.id %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'update' todo.id %}" class="btn btn-info">Update</a>
             </div>
         </div>
 {% endblock content %}

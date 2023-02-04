@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Todo
-from .forms import TodoCreateForm
+from .forms import TodoCreateForm, TodoUpdateForm
 
 
 def home(request):
@@ -31,3 +31,16 @@ def create(request):
     else:
         form = TodoCreateForm()
     return render(request, 'create.html', {'form': form})
+
+
+def update(request, todo_id):
+    form = TodoUpdateForm
+    todo = Todo.objects.get(id=todo_id)
+    if request.method == 'POST':
+        form = form(request.POST, instance=todo)
+        if form.is_valid():
+            form.save()
+            return redirect('details', todo_id)
+    else:
+        form = form(instance=todo)
+    return render(request, 'update.html', {'form': form})
