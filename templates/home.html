@@ -2,10 +2,12 @@
 {% block title %} Home {% endblock title %}
 {% block content %}
     {% for todo in todos %}
-        <h3>{{ todo.title }}</h3>
-        <small>{{ todo.title }}</small>
-        <small>{{ todo.created }}</small>
-        <p>{{ todo.body }}</p>
-    <hr>
+        <div class="card col-4" aria-hidden="true">
+            <div class="card-body">
+                <h5 class="card-title placeholder-glow">{{ todo.title }}</h5>
+                <p class="card-text placeholder-glow">{{ todo.body }}</p>
+                <p>{{ todo.created }}</p>
+            </div>
+        </div>
     {% endfor%}
 {% endblock content %}
