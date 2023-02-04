@@ -4,4 +4,5 @@ from .views import *
 
 urlpatterns = [
     path('', home),
+    path('detail/<int:todo_id>/', detail),
 ]
