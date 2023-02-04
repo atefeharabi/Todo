@@ -4,9 +4,7 @@
     {% for todo in todos %}
         <div class="card col-4" aria-hidden="true">
             <div class="card-body">
-                <h5 class="card-title placeholder-glow">{{ todo.title }}</h5>
-                <p class="card-text placeholder-glow">{{ todo.body }}</p>
-                <p>{{ todo.created }}</p>
+                <a href="detail/{{todo.id}}" class="btn btn-primary col-6">{{todo.title}}</a>
             </div>
         </div>
     {% endfor%}
