@@ -4,7 +4,7 @@
 {% block content %}
     <div class="card col-4" aria-hidden="true">
             <div class="card-body">
-                <h5 class="card-title placeholder-glow">{{ todo.title }}</h5>
+                <h5 class="card-title placeholder-glow">{{ todo.title|title }}</h5>
                 <p class="card-text placeholder-glow">{{ todo.created }}</p>
                 <p class="card-text placeholder-glow">{{ todo.body }}</p>
             </div>

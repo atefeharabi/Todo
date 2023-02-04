@@ -4,7 +4,7 @@
     {% for todo in todos %}
         <div class="card col-4" aria-hidden="true">
             <div class="card-body">
-                <a href="detail/{{todo.id}}" class="btn btn-primary col-6">{{todo.title}}</a>
+                <a href="{% url 'details' todo.id %}" class="btn btn-primary col-6">{{todo.title|title}}</a>
             </div>
         </div>
     {% endfor%}
